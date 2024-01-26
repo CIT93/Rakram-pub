@@ -27,7 +27,15 @@ const numberInHousehold = 3;
 determineHouseHoldPts(3)
 determineHouseHoldPts(4)
 
-
+if (Housesize === "Largehousesize") {
+    cardonFootprintPoints = CarbonFootprintPoints + 10;
+} else if(housesize === "Mediumsizehouse") {
+    cardonFootprintPoints = cardonFootprintPoints + 7;
+} else if(Housesize === "Smallsizehouse") {
+    cardonFootprintPoints = cardonFootprintPoints + 4;
+} else if(Housesize === "Apartmentsize") {
+    cardonFootprintPoints = cardonFootprintPoints + 2;
+}
    
 
 
