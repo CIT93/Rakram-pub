@@ -1,4 +1,17 @@
-function determineHouseholdPts() {
+function determineHouseholdPts(size) {
+   if (size === "large") {
+    cardonFootprintPoint = cardonFootprintPoint + 10;
+   } else if (size === "meduim") {
+    cardonFootprintPoint = cardonFootprintPoint + 7;
+   } else if (size === "small") {
+    cardonFootprintPoint = cardonFootprintPoint + 4;
+   }
+   else if (size === "apt") {
+    cardonFootprintPoint = cardonFootprintPoint + 4;
+   }
+}
+
+function determineHouseholdPts(numberInHousehold) {
 console.log("Inside the function")
     if (numberInHousehold === 1) {
         cardonFootprintPoint = cardonFootprintPoint + 14;
@@ -15,13 +28,14 @@ console.log("Inside the function")
     } else if (numberInHousehold > 6) {
         cardonFootprintPoint = cardonFootprintPoint + 2;
     }
-    console.log(`Based on the number of members in the household of ${numberInHousehold} the point would be ${cardonFootprintPoint}.`);
+    console.log(
+        `Based on the number of members in the household of ${numberInHousehold} the point would be ${cardonFootprintPoint}.`);
 }
 
 let cardonFootprintPoint = 0;
-const numberInHousehold = 3;
 
 // global scope
 
-determineHouseholdPts(3)
-determineHouseholdPts(4)
+determineHouseholdPts(5)
+determineHouseholdPts("apt");
+
