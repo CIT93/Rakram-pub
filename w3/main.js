@@ -21,7 +21,6 @@ console.log("Inside the function")
 let cardonFootprintPoint = 0;
 const numberInHousehold = 3;
 
-
 // global scope
 
 determineHouseholdPts(3)
