@@ -21,9 +21,38 @@ console.log(`Based on the number of members in the household of ${numberInHouseh
 let CarbonFootprintPoints = 0;
 //const numberInHousehold = 3;
 
+determineHouseholdPts(3)
+*/
 
-// global scope
+/*
+If you have a large house, then add 10 points to your score.
+If you have a medium-sized house, then add 7 points.
+If you have a small house, then add 4 ponits.
+If you live in an apartment, then add 2 points.
+*/
 
+
+
+
+
+function findingHousesize(housesize) {
+    let CarbonFootprintPoints = 0;
+
+    if (housesize === "large house") {
+        CarbonFootprintPoints = CarbonFootprintPoints + 10;
+    } else if (housesize === "medium house") {
+        CarbonFootprintPoints = CarbonFootprintPoints + 7;
+    } else if (housesize === "small house") {
+        CarbonFootprintPoints = CarbonFootprintPoints + 4;
+    } else if (housesize === "apartment") {
+        CarbonFootprintPoints = CarbonFootprintPoints + 2; 
+    }
+console.log(`Based on size of your ${housesize} the points would be ${CarbonFootprintPoints}`);
+
+}
+
+
+findingHousesize("APARTMENT")
 determineHouseholdPts(3)
 determineHouseholdPts(4)
 
