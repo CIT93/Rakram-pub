@@ -43,14 +43,21 @@ function start(houseHoldMembers, houseSize) {
   }
 
   function displayOutput() {
-
+    for (arr of CFPDATA) {
+      console.log(arr)
+      const output = document.getElementById("output");
+      const newP = document.createElement("p");
+      newP.textContent = `Cardon Footprint total is ${arr[4]}`
+      output.appendChild(newP)
+    }
   }
 
     start(5, "apt");
     start(4, "large");
     start(3, "meduim");
     start(2, "small");
-
+ //we  can add 4 starts in function determineHouseSizePts(size)
+ //We can add 7 starts in function determineHouseholdnumbers(numberInHousehold)
     displayOutput()
     
     
