@@ -39,7 +39,7 @@ function start(houseHoldMembers, houseSize) {
     const householdPts =  determineHouseholdnumbers(houseHoldMembers);
     const householdsize = determineHouseSizePts(houseSize);
     const total = householdsize + householdPts;
-    CFPDATA.push([houseHoldMembers, houseSize, householdPts, houseSize, total])
+    CFPDATA.push([houseHoldMembers, houseSize, householdPts,householdsize, total])
   }
 
   function displayOutput() {
@@ -47,7 +47,7 @@ function start(houseHoldMembers, houseSize) {
       console.log(arr)
       const output = document.getElementById("output");
       const newP = document.createElement("p");
-      newP.textContent = `Cardon Footprint total is ${arr[4]}`
+      newP.textContent = `Cardon Footprint total is ${arr[4]} number of household members total is ${arr[0]} score for house members total is ${arr[1]} size of house total is ${arr[3]} score for size of house total is ${arr[2]} `
       output.appendChild(newP)
     }
   }
