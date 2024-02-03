@@ -40,15 +40,23 @@ function start(houseHoldMembers, houseSize) {
     const householdsize = determineHouseSizePts(houseSize);
     const total = householdsize + householdPts;
     CFPDATA.push([houseHoldMembers, houseSize, householdPts,householdsize, total])
+
   }
 
   function displayOutput() {
     for (arr of CFPDATA) {
       console.log(arr)
       const output = document.getElementById("output");
-      const newP = document.createElement("p");
-      newP.textContent = `Cardon Footprint total is ${arr[4]} number of household members total is ${arr[0]} score for house members total is ${arr[1]} size of house total is ${arr[3]} score for size of house total is ${arr[2]} `
-      output.appendChild(newP)
+      const newH2 = document.createElement("H2");
+      newH2.textContent = `Cardon Footprint total is ${arr[4]};
+      const newH3 = document.creatElement("H3");
+      newH3.textContext = 'Based on number in and size of home'
+      const neWP = document.createElement("p");
+      neWP.textContent = 'This number is based on the number of people in the house of ${arr[1]} size of Home (score:${arr[2]}).';
+      neWP.textContent += ' and a ${arr[1]} size of home (score:${arr[2]}).';
+      output.appendChild(new2);
+      output.appendChild(newH3);
+      output.appendChild(newP);
     }
   }
 
@@ -56,11 +64,6 @@ function start(houseHoldMembers, houseSize) {
     start(4, "large");
     start(3, "meduim");
     start(2, "small");
- //we  can add 4 starts in function determineHouseSizePts(size)
- //We can add 7 starts in function determineHouseholdnumbers(numberInHousehold)
-    displayOutput()
-    
-    
 
-
+    displayOutput(); 
 
