@@ -39,7 +39,7 @@ function start(houseHoldMembers, houseSize) {
     const householdPts =  determineHouseholdnumbers(houseHoldMembers);
     const householdsize = determineHouseSizePts(houseSize);
     const total = householdsize + householdPts;
-    CFPDATA.push([houseHoldMembers, houseSize, householdPts,householdsize, total])
+    CFPDATA.push([houseHoldMembers, houseSize, householdPts,householdsize, total]);
 
   }
 
@@ -57,7 +57,7 @@ function start(houseHoldMembers, houseSize) {
       output.appendChild(new2);
       output.appendChild(newH3);
       output.appendChild(newP);
-    }
+   }
   }
 
     start(5, "apt");
@@ -65,5 +65,4 @@ function start(houseHoldMembers, houseSize) {
     start(3, "meduim");
     start(2, "small");
 
-    displayOutput(); 
-
+  displayOutput()
