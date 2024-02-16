@@ -17,15 +17,15 @@ input:out-of-range { background-color: lightcoral; }
     <fieldset>
     <legend>Calculating your Carbon Footprint Points</legend>
     <div>
-    <label>First Name:</label>
-    <input type="text" name="firstname" required />
+         <label>First Name:</label>
+         <input type="text" name="firstname" required maxlength="20"/>
             </div>
             <div>
                <label>Last Name:</label>
                <input type="text" name="lastname" required />
             </div>
             <div>
-                <label>Count the number of your household</label>
+                <label>how many people in yor home</label>
                 <input type="number" name="housem" min="1" max="6" required/>    
             </div>
             <div>
@@ -40,9 +40,8 @@ input:out-of-range { background-color: lightcoral; }
                  </select> 
             </div> 
             <fieldset>
-               <!-- ... -->
+             
                      <button type="submit">Submit</button>
-                <!-- ... -->
                 </fieldset>
                 <div id="output"></div>
             </form>

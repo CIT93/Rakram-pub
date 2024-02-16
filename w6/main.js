@@ -45,17 +45,20 @@ function displayOutObj (Obj){
       output.appendChild(newH2);
 }
 
-function start(houseHoldMembers, houseSize) {
+function start (firstName, lastName, houseHoldMembers, houseSize) {
     const householdPts =  determineHouseholdnumbers(houseHoldMembers);
     const householdsize = determineHouseSizePts(houseSize);
     const total = householdsize + householdPts;
-// const cfpObj = ({
-// houseHoldMembers: houseHoldMembers,
-// houseSize : houseSize,
-// householdPts : householdPts,
-// householdsize : householdsize,
-// mytotal: total
-//}
+const data = {
+  firstName: firstName,
+  lastName: lastName,
+  houseM: houseHoldMembers,
+  houseS: houseSize,
+  houseMPoints: householdPts,
+  houseSPTS: houseSizePTS,
+  cfpTotal: total,
+};
+
 cfpData.push({
   houseM: houseHoldMembers,
   houseS: houseSize,
@@ -111,7 +114,7 @@ document.querySelector('#form').addEventListener('submit', function(e) {
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(houseMembers,houseSize);
+  start(firstName, lastName, houseMembers,houseSize);
   OUTPUT.innerHTML = "";
   displayOutput();
   FORM.reset();
