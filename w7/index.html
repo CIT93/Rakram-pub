@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="main.js"></script>
+        <title>Week 7 - Cardon Footprint -pub</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+    <legend>Calculating your Carbon Footprint Points</legend>
+    <div>
+         <label>First Name:</label>
+         <input type="text" name="firstname" required maxlength="20"/>
+            </div>
+            <div>
+               <label>Last Name:</label>
+               <input type="text" name="lastname" required />
+            </div>
+            <div>
+                <label>how many people in yor home</label>
+                <input type="number" name="housem" min="1" max="6" required/>    
+            </div>
+            <div>
+                <label>Consider the size of your house</label>
+                 <!-- <input type="text" name="houses" required/> -->
+                 <select name="houses" required>
+                   <option value="">---please enter size of house---</option>
+                   <option value="apt">Apartment</option>
+                   <option value="large">Large</option>
+                   <option value="medium">Medium</option>
+                   <option value="small">Small</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+    <!--table>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>HouseHold</th>
+            <th>Carbon Footprint</th>
+            <th>Action</th>
+            </tr>
+    </thead>
+    </tbody>
+            <tr>
+                <td>rabeeza</td>
+                <td>3</td>
+                <td>Large</td>
+                <td>20</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Del</button>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+                
+                
+
