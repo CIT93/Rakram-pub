@@ -9,7 +9,7 @@ var thName;
   export function renderTbl(data) {
   
   
-  
+ // I tried but thats working
   
 	
   let newData = {footprint: 'someValue'}; renderTbl(data, newData);
