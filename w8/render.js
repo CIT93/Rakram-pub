@@ -1,89 +1,47 @@
-const Tbl = document.getElementById("tab-data");
-
-let table;
+const TBL = document.getElementById("tab-data");
 
 function renderTBLHeading () {
-  Tbl.innerHTML = "";
-  const table = document.createElement("table");
-  const thead = document.createElement("thead");
-  const tr = document.createElement("tr");
-  const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Action"];
-  headingTextArr.forEach(function(text){
-    const th = document.createElement("th");
-    th.textContent = text;
+  TBL.innerHTML = "";
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
+    //const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Action"]
+    const headingTextArr = ["Name", "Footprint"];
+    headingTextArr.forEach(function(text){
+      const th = document.createElement("th");
+      th.textContent = text;
     tr.appendChild(th);
-  });
-  thead.appendChild(tr);
-  table.appendChild(thead);
-    return table
-
-}
-  
-function renderTblBtn(index,data){
-  const td = document.createElement("td");
-  const btnEdit = document.createElement("button");
-  const btnDel = document.createElement("button");
-  btnEdit.textContent = "Edit";
-  btnDel.textContent = "Del";
-  td.appendChild(btnEdit);
-  td.appendChild(btnDel);
-  btnDel.addEventListener('click', function(e){
-    console.log('Hello from inside the delete button');
-    console.log(e);
-    data.splice(index,1);
-    renderTbl(data);
- });
-  btnEdit.addEventListener("click", function (e) {
-    FORM[1].value = obj.fname;
-    FORM[2].value = obj.lname;
-    FORM[3].value = obj.members;
-    FORM[4].value = obj.size;
-
-    data.splice(index, 1);
-    renderTbl(data);
-  });
-  return td;
- }
+    });
+    thead.appendChild(tr);
+    table.appendChild(thead);
+  return table
+  }
 
 
-function renderTBLBody(data){
-  const tbody = document.createElement("tbody");
-  data.forEach(function (obj, index) {
-    console(index);
+    function renderTbl(data) { 
+   const table = renderTBLHeading();
+   const tbody = document.createElement("tbody");
    const tr = document.createElement("tr");
-   for (const [key, value] of Object.entries(obj)) {
-    console.log('key ${key} value ${value}');
-    if (key !== "lastName" && key !== "houseMPTS" && key !== "houseSPTS") {
-      const td = document.createElement("td");
-      td.textContent = value;
-      tr.appendChild(td);
-    }
-  }
-
- const td = renderTblBtn(index, data);
-  tr.appendChild(td);
-  tbody.appendChild(tr);
-  });
-return tbody;
+   //const trTextArr = ["Rio", 3, "Large", 20 ];
+   data.foreach(function(obj){
+    const tdName = document.createElement("td");
+    tdName.textContent = obj.firstName;
+    const tdTotal = document.createElement("td");
+    tdTotal.textContent = obj.cfpTotal;
+    tr.appendChild(tdName);
+    tr.appendChild(tdTotal);
+   })
+   //const td = document.createElement("td");
+   //const btnEdit = document.createElement("button");
+   //const btnDel= document.createElement("button");
+   //btnEdit.textContent = "Edit";
+   //btnDel.textContent = "Del";
+   //td.appendChild(btnEdit);
+   //td.appendChild(btnDel);
+   //tr.appendChild(td);
+   tbody.appendChild(tr);
+   table.appendChild(tbody);
+   TBL.appendChild(table);
 }
 
-function createRow(data) {
-	return document.createElement("tr");
-}
-
-
-function renderTbl(data) {
-	if (data.length !== 0) {
-		const table = renderTBLHeading();
-		const tbody = createRow(data);
-		table.appendChild(tbody);
-		Tbl.appendChild(table);
-		table.remove();
-  }
-}
-
-
-export { renderTbl };
-
-  
-
+export {renderTbl};

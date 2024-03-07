@@ -16,5 +16,5 @@
                 padding:px;
             } 
             tbody tr:nth-child(odd) {
-                background-color: rgba(100, 240, 160, 0.951);
+                background-color: rgba(220, 245, 231, 0.951);
             }
