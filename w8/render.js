@@ -16,7 +16,7 @@ function renderTBLHeading () {
   return table
   }
 
-    function renderTblBtn(index, data){
+    function renderTblBtn( obj, index, data){
       const td = document.createElement("td");
       const btnEdit = document.createElement("button");
       const btnDel= document.createElement("button");
@@ -26,15 +26,22 @@ function renderTBLHeading () {
       td.appendChild(btnDel);
       btnDel.addEventListener('click', function(e){
         console.log('Hello from inside the delete button');
-        console.log(e);
+        // console.log('Hello from inside the delete button');
+       if (index > 1) {
         data.splice(index, 1);
-       renderTBL(data)
-      ;
+        renderTBL(data)
+       }
       });
-    
-      return td;
-    }
-
+    btnEdit.addEventListener(`click`, function(e){
+      FORM[1].value = obj.firstname;
+      FROM[2].value = obj.lastname;
+      FORM[3].value = obj.members;
+      FORM.value = obj.size;
+      data.splice(index,1);
+      renderTbl(data);
+    });
+    return td;
+  
   function renderTblBody(data){
     const tbody = document.createElement("tbody");
     data.forEach(function(Obj,index) {
@@ -56,13 +63,16 @@ function renderTBLHeading () {
   
   
   function renderTbl(data) { 
+    TBL.HTML = "";
+    if (data.lenght !== 0) {
       const table = renderTBLHeading();
       const TBODY = creatingTBLBody(data);
       table.appendChild(TBODY);
       TBL.appendChild(table);
+    }
+  }
+  
+   export {renderTbl};
 }
 
-
   
-   export {renderTbl,};
-   
