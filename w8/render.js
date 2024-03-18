@@ -25,6 +25,7 @@ function renderTBLHeading () {
       td.appendChild(btnEdit);
       td.appendChild(btnDel);
       btnDel.addEventListener('click', function(e){
+        console.log('Hello from inside the delete button');
         console.log(e);
         data.splice(index, 1);
        renderTBL(data)
@@ -54,15 +55,13 @@ function renderTBLHeading () {
 }
   
   
-  function renderTBL (data) {
-    TBL.innerHTML = "";
-     if (data.length !== 0) {
-     const table = renderTBLHeading();
-     const TBODY = creatingTBLBody(data);
-     table.appendChild(TBODY);
-     TBL.appendChild(table);
- }
-};
+  function renderTbl(data) { 
+      const table = renderTBLHeading();
+      const TBODY = creatingTBLBody(data);
+      table.appendChild(TBODY);
+      TBL.appendChild(table);
+}
+
 
   
    export {renderTbl,};
