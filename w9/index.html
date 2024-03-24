@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="main.js"></script>
+        <title>Carbon Footprint W9 - public</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <h1>Carbon Footprint</h1>
+        <div id="error"></div>
+        <fieldset></br>
+            <legend>Carbon Footprint Calculator</legend>
+            <div>
+                <label for="fname">First Name</label>
+                <input id="fname" type="text" name="fname" maxlength="20"> 
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input id="lname" type="text" name="lname" maxlength="20">
+            </div>
+            </div>
+                <label for="">Count the members in your household</label>
+                <input type="number" name="housem" min="1" max="6" required
+        </div>
+        <div>
+                <label for="">Select your homesize: </label>
+                <select id="housesize" name="housesize" required>
+                    <option value="large">Large</option>
+                    <option value="meduim">Meduim</option>
+                    <option value="small">Small</option>
+                    <option value="apt">Apartment</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+</body>
+</html>
+
+                
+                
+

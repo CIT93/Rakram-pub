@@ -1,7 +1,8 @@
-const TBL = document.getElementById("tab-data");
+import {FORM, TBL} from "./global.js";
+import {saveLs} from "./storage.js";
 
 function renderTBLHeading () {
-    TBL.innerHTML = "";
+    //TBL.innerHTML = "";
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -16,6 +17,12 @@ function renderTBLHeading () {
   return table
   }
 
+  function onUpdate(index, data) {
+    data.splice(index, 1);
+    saveLs(data);
+    renderTbl(data);
+ }
+
     function renderTblBtn( obj, index, data){
       const td = document.createElement("td");
       const btnEdit = document.createElement("button");
@@ -25,20 +32,19 @@ function renderTBLHeading () {
       td.appendChild(btnEdit);
       td.appendChild(btnDel);
       btnDel.addEventListener('click', function(e){
-       if (index > 1) {
-        data.splice(index, 1);
-        renderTBL(data)
-       }
+      
       });
     btnEdit.addEventListener(`click`, function(e){
-      FORM[1].value = obj.firstname;
-      FROM[2].value = obj.lastname;
-      FORM[3].value = obj.members;
-      FORM.value = obj.size;
-      data.splice(index,1);
-      renderTbl(data);
+     FORM[1].value = obj.firstName;
+     FORM[2].value = obj.lastName;
+     FORM[3].value = obj.houseM;
+     FORM[4].value = obj.houseS;
+     onUadate(index, data);
+     renderTbl(data);
+     
     });
     return td;
+    }
   
   function renderTblBody(data){
     const tbody = document.createElement("tbody");
@@ -46,7 +52,7 @@ function renderTBLHeading () {
       console.log(index);
       const tr = document.createElement("tr");
       for(const [key, value] of Object.entries(Obj)){
-        if(key !== "lastName" && key !== "houseMPTS" && key !== "houseSMPTS") {
+        if(key !== "lastName" && key !== "houseMPTS" && key !== "houseSPTS") {
           const td = document.createElement("td");
           td.textContent = value;
           tr.appendChild(td);
@@ -58,20 +64,18 @@ function renderTBLHeading () {
  });
  return tbody;
 }
- 
+
   function renderTbl(data) { 
-    TBL.HTML = "";
-    if (data.lenght !== 0) {
+    TBL.innerHTML = "";
+    if (data.length !== 0) {
       const table = renderTBLHeading();
-      const TBODY = creatingTBLBody(data);
+      const TBODY = renderTblBody(data);
       table.appendChild(TBODY);
       TBL.appendChild(table);
     }
-  }
-  
- 
-}
- export {renderTbl};
+ }
+  export {renderTbl};
+
 
 
   
