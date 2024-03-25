@@ -18,3 +18,11 @@
             tbody tr:nth-child(odd) {
                 background-color: rgba(66, 230, 137, 0.951);
             }
+
+            /* stlye for error messages and invalid fields */
+            .error {
+                color: red;
+            }
+            .invalid {
+                border-color: red;
+            }
