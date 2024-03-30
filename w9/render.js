@@ -2,7 +2,7 @@ import {FORM, TBL} from "./global.js";
 import {saveLs} from "./storage.js";
 
 function renderTBLHeading () {
-    //TBL.innerHTML = "";
+    TBL.innerHTML = "";
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -10,18 +10,18 @@ function renderTBLHeading () {
     headingTextArr.forEach(function(text){
       const th = document.createElement("th");
       th.textContent = text;
-    tr.appendChild(th);
+      tr.appendChild(th);
     });
     thead.appendChild(tr);
     table.appendChild(thead);
   return table
-  }
-
-  function onUpdate(index, data) {
+  } 
+  
+  function onUpdate(index, data){
     data.splice(index, 1);
-    saveLs(data);
-    renderTbl(data);
- }
+        saveLS(data);
+        renderTbl(data);
+  }
 
     function renderTblBtn( obj, index, data){
       const td = document.createElement("td");
@@ -31,8 +31,10 @@ function renderTBLHeading () {
       btnDel.textContent = "Del";
       td.appendChild(btnEdit);
       td.appendChild(btnDel);
-      btnDel.addEventListener('click', function(e){
       
+      btnDel.addEventListener('click', function(e){
+       console.log("delete")
+       onUpdate(index, data);
       });
     btnEdit.addEventListener(`click`, function(e){
      FORM[1].value = obj.firstName;
@@ -46,12 +48,13 @@ function renderTBLHeading () {
     return td;
     }
   
-  function renderTblBody(data){
+  function renderTBLHeading (data){
     const tbody = document.createElement("tbody");
     data.forEach(function(Obj,index) {
-      console.log(index);
       const tr = document.createElement("tr");
       for(const [key, value] of Object.entries(Obj)){
+        console.log(`key ${key} value ${value}`);
+
         if(key !== "lastName" && key !== "houseMPTS" && key !== "houseSPTS") {
           const td = document.createElement("td");
           td.textContent = value;

@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="module" src="main.js"></script>
-        <title>Carbon Footprint W9 - public</title>
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 - Carbon Footprint - Pri</title>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="carbonfootprint.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form id="form">
-        <h1>Carbon Footprint</h1>
-        <div id="error"></div>
-        <fieldset></br>
-            <legend>Carbon Footprint Calculator</legend>
+
+        <fieldset>
+            <legend>Calculating Carbon Footprint</legend>
             <div>
-                <label for="fname">First Name</label>
-                <input type="text" name="fIrstname" id="firstName" max="25"/> 
-                <spam id="firstNameError" class="error"></spam>
+                <label for="">First Name:</label>
+                <input id="firstName" type="text" name="firstname" >
+                <span id="firstNameError" class="error" role="alert"></span>
             </div>
             <div>
-                <label for="lname">Last Name</label>
-                <input type="text" name="lname" id="lastName" max="25" />
-                <spam id="firstNameError" class="error"></spam>
+                <label for="">Last Name:</label>
+                <input id="lastName" type="text" name="lastname" >
+                <span id="lastNameError" class="error" role="alert"></span>
             </div>
+            <div>
+                <label for="household">Count the members of your household</label>
+                <input type="number" name="housem" min="1" max="6" required>
             </div>
-                <label for="">Count the members in your household</label>
-                <input type="number" name="housem" min="1" max="6"required>
-        </div>
-        <div>
-                <label for="">Select your homesize: </label>
-                <select id="housesize" name="housesize" required>
-                    <option value="large">Large</option>
-                    <option value="meduim">Meduim</option>
-                    <option value="small">Small</option>
-                    <option value="apt">Apartment</option>
-                </select>
+            <div>
+                <label for="housesize">Consider the size of your house</label>
+               <!--<input type="text" name="houses" required>-->
+               <select name="houses" required>
+                <option value="">----Please enter size of home</option>
+                <option value="apartment">Apartment</option>
+                <option value="large house">Large</option>
+                <option value="medium house">Medium</option>
+                <option value="small house">Small</option>
+               </select>
             </div>
-            <button type="submit">Submit</button><br>
-            <spam id="submitError" class="error"></spam>
+            <button type="submit">Submit</button>
+            <span id="submitError" class="error"></span>
         </fieldset>
-     </form>
+    </form>
     <div id="output"></div>
     <div id="tab-data"></div>
- </body>
- </html>
-        
-
-   
-                
-                
-
+    <!--
+        <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>household</th>
+                <th>House Size</th>
+                <th>Carbon Footprint</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Angelo</td>
+                <td>3</td>
+                <td>Large</td>
+                <td>20</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Angelo</td>
+                <td>3</td>
+                <td>Large</td>
+                <td>20</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    -->
+</body>
+</html>
