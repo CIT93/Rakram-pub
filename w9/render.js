@@ -19,7 +19,7 @@ function renderTBLHeading () {
   
   function onUpdate(index, data){
     data.splice(index, 1);
-        saveLS(data);
+        saveLs(data);
         renderTbl(data);
   }
 
@@ -48,7 +48,7 @@ function renderTBLHeading () {
     return td;
     }
   
-  function renderTBLHeading (data){
+  function renderTblBody (data){
     const tbody = document.createElement("tbody");
     data.forEach(function(Obj,index) {
       const tr = document.createElement("tr");

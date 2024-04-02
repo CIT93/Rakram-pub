@@ -27,14 +27,14 @@ renderTbl[cfpData];
  const  validatefield = event => {
   const field = event.target.value;
   const fieldId = event.target.id;
-  const fieldError = document.getElementById(`$ {fieldId}Error`);
+  const fieldError = document.getElementById(`${fieldId}Error`);
   
   if (field === '') {
     fieldError.textContent = `${fieldId} is required`;
-    event.target.classList.add('invalid');
+    event.target.classList.add(`invalid`);
 } else {
-    fieldError.TextContent = '';
-    event.target.classList.remove('invalid');
+    fieldError.textContent = '';
+    event.target.classList.remove(`invalid`);
 
     }
   };
@@ -46,22 +46,21 @@ renderTbl[cfpData];
 
 FORM.addEventListener('submit', function(e) {
   e.preventDefault();
-  const firstname = FORM.firstName.Value;
+  const firstName = FORM.firstName.value;
   const lastName = FORM.lastname.value;
   const firstNameIsvalid = firstNameEl.value !== '';
   const lastNameIsvalid = lastNameEl.value !== '';
-
   if (firstNameIsvalid && lastNameIsvalid) {
-    submitEl.textContent = '';
-    const houseMembers = parseInt[FORM.housem.value];
+    submitEl.textContent ='';
+    const houseMembers = parseInt(FORM.housem.value);
     const houseSize =FORM.houses.value;
-
-  start(firstName, lastName, houseMembers,houseSize);
-  saveLs(cfpData);
-  renderTbl(cfpData);
+    start(firstName, lastName, houseMembers,houseSize);
+    saveLs(cfpData);
+    renderTbl(cfpData);
+  
   FORM.reset();
 } else {
-  submitEl.textContent = "Form requires first name and last name";
+  
+  submitEl.textContent = "Form requires first name and last name"
 }
- 
 })
