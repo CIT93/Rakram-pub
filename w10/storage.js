@@ -1,9 +1,9 @@
-const saveLs = function (cfpData) {
+const saveLs = (cfpData) => {
     const serializedArr = JSON.stringify(cfpData);
     localStorage.setItem("cfp", serializedArr);
  }
 
-const getLS = function () {
+const getLS = () => {
     const retrievedArr = localStorage.getItem("cfp");
     if(retrievedArr !== null) {
         return JSON.parse(retrievedArr);

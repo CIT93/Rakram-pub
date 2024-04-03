@@ -1,5 +1,6 @@
-const determineHouseSizePts = function (size) {
-    console.log("inside block scope");
+// function to measure Housesize
+const determineHouseSizePts = (size = "Large") =>{
+  
     let houseSizePoints = 0;
     if (size === "large") {
         houseSizePoints = 10;
@@ -11,10 +12,10 @@ const determineHouseSizePts = function (size) {
         houseSizePoints = 2;
     } 
     return houseSizePoints;
-}
-
-  const determineHouseholdnumbers =function (numberInHousehold) {
-  let houseHoldpoints = 0;
+};
+ 
+const determineHouseholdnumbers = (numberInHousehold =3) => {
+  let houseHoldpoints = 0; 
   if (numberInHousehold === 1) {
     houseHoldpoints = 14;
   } else if (numberInHousehold === 2) {
