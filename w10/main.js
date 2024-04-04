@@ -1,24 +1,38 @@
 import{ renderTbl} from "./render.js";
-import { determineHouseholdnumbers, determineHouseSizePts } from "./cfp.js";
+import { determineHouseHoldPts, determineHouseSizePts } from "./cfp.js";
 import {FORM, FNAME, LNAME,SUBMIT} from "./global.js";
 import { saveLs, cfpData } from "./storage.js";
 
-const start = ( first, last, houseHoldMembers, houseSize) => {
-   // const householdsize and determines householdMembers, there information ...housesize
-const householdPts =  determineHouseholdnumbers(houseHoldMembers);
-    const householdsize = determineHouseSizePts(householdsize);
-    const total = householdsize + householdPts;
+//const start =( first, last, houseHoldMembers, houseSize) => {
+    //const householdPts = determineHouseHoldPts();
+    //const houseSize = determineHouseSizePts ();
+    //const total = houseSize + householdPts;
+   // cfpData.push({
+  //firstName: first,
+  //lastName: last,
+  //houseM: houseHoldMembers,
+  //houseS: houseSize,
+  //houseMPTS: householdPts,
+  //houseSPTS: householdsize,
+  //cfpTotal: total
+  //});
+//}
 
-cfpData.push({
-  firstName: first,
-  lastName: last,
-  houseM: houseHoldMembers,
-  houseS: houseSize,
-  houseMPTS: householdPts,
-  houseSPTS: householdsize,
-  cfpTotal: total
-  });
+const start =( ...i) => {
+  const householdPts = determineHouseHoldPts(i[2]);
+  const houseSize = determineHouseSizePts (i[3]);
+  const total = householdPts + houseSize;
+  cfpData.push({
+firstName:i[0],
+lastName: i[1],
+houseM: i[2],
+houseS: i[3],
+houseMPTS: householdPts,
+houseSPTS: houseSize,
+cfpTotal: total
+});
 }
+
  
 renderTbl[cfpData];
 // function to validate a single field

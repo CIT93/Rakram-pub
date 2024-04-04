@@ -14,7 +14,7 @@ const determineHouseSizePts = (size = "Large") =>{
     return houseSizePoints;
 };
  
-const determineHouseholdnumbers = (numberInHousehold =3) => {
+const determineHouseHoldPts = (numberInHousehold =3) => {
   let houseHoldpoints = 0; 
   if (numberInHousehold === 1) {
     houseHoldpoints = 14;
@@ -35,4 +35,4 @@ const determineHouseholdnumbers = (numberInHousehold =3) => {
 }
 
 
-export {determineHouseholdnumbers, determineHouseSizePts}
+export {determineHouseHoldPts, determineHouseSizePts}
