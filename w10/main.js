@@ -4,9 +4,9 @@ import {FORM, FNAME, LNAME,SUBMIT} from "./global.js";
 import { saveLs, cfpData } from "./storage.js";
 
 const start = function ( first, last, houseHoldMembers, houseSize) {
-   // const householdsize determines householdMembers and there information ...housesize
-const householdPts =  determineHouseholdnumbers(houseHoldMembers);
-    const householdsize = determineHouseSizePts(houseSize);
+   // const householdsize and determines householdMembers, there information ...housesize
+const householdPts =  determineHouseholdnumbers(householdsize);
+    const householdsize = determineHouseSizePts(houseHoldMembers);
     const total = householdsize + householdPts;
 
 cfpData.push({
