@@ -5,8 +5,8 @@ import { saveLs, cfpData } from "./storage.js";
 
 const start = ( first, last, houseHoldMembers, houseSize) => {
    // const householdsize and determines householdMembers, there information ...housesize
-const householdPts =  determineHouseholdnumbers();
-    const householdsize = determineHouseSizePts();
+const householdPts =  determineHouseholdnumbers(houseHoldMembers);
+    const householdsize = determineHouseSizePts(householdsize);
     const total = householdsize + householdPts;
 
 cfpData.push({
