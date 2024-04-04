@@ -3,10 +3,10 @@ import { determineHouseholdnumbers, determineHouseSizePts } from "./cfp.js";
 import {FORM, FNAME, LNAME,SUBMIT} from "./global.js";
 import { saveLs, cfpData } from "./storage.js";
 
-const start = function ( first, last, houseHoldMembers, houseSize) {
+const start = ( first, last, houseHoldMembers, houseSize) => {
    // const householdsize and determines householdMembers, there information ...housesize
-const householdPts =  determineHouseholdnumbers(householdsize);
-    const householdsize = determineHouseSizePts(houseHoldMembers);
+const householdPts =  determineHouseholdnumbers();
+    const householdsize = determineHouseSizePts();
     const total = householdsize + householdPts;
 
 cfpData.push({
