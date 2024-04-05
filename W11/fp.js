@@ -52,7 +52,7 @@ foodChoice() {
     houseSizePoints = 7;
 } else if (this.foodChoice === "veg") {
     houseSizePoints = 4;
-} else if (this.foodChoice === "mild") {
+} else if (this.foodChoice === "Mild") {
     houseSizePoints = 2;
  }
 }

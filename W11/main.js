@@ -6,7 +6,7 @@ import { FP } from "./fp.js"
 
 const start =( first, last, houseHoldMembers, houseSize) => {
     const householdPts = determineHouseHoldPts();
-    const houseSize = determineHouseSizePts ();
+    const houseSizePts = determineHouseSizePts ();
     const total = houseSize + householdPts;
    cfpData.push({
   firstName: first,
