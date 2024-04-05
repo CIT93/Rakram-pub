@@ -1,3 +1,4 @@
+
 class FP {
     constructor(first, last, houseMembers, houseSize, foodChoice) {
         this.first = first;

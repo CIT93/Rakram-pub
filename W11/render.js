@@ -7,8 +7,8 @@ const renderTBLHeading = () => {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Action"]
-    headingTextArr.forEach(function(text){
+    const headingTextArr = ["Name", "HouseHold", "HouseSize", "foodchoice", "Footprint", "Action"]
+     headingTextArr.forEach(function(text) {
       const th = document.createElement("th");
       th.textContent = text;
       tr.appendChild(th);
@@ -42,6 +42,7 @@ const renderTBLHeading = () => {
      FORM[2].value = obj.last;
      FORM[3].value = obj.houseMembers;
      FORM[4].value = obj.houseSize;
+     FORM[5].value = obj.foodchoice;
      onUpdate(index, data);
      renderTbl(data);
      

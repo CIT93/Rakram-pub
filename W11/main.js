@@ -48,10 +48,8 @@ FORM.addEventListener('submit', function(e) {
   if (FNAME.value !== '' && LNAME.value !== '') {
     SUBMIT.textContent ='';
     //start(FNAME.value, LNAME.value,  parseInt(FORM.housem.value), FORM.houses.value);
-    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value);
-    //fpObj.houseHoldpoints();
-    //fpObj.houseSizePoints();
-   cfpData.push(fpObj)
+    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FROM.foodchoice.value);
+    cfpData.push(fpObj)
     saveLs(cfpData);
     renderTbl(cfpData)
     FORM.reset();
